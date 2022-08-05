@@ -1,4 +1,4 @@
-# Custom Stats - 1.1
+# Custom Stats - 0.1
 
 ## GENERAL
 No Man's Sky mod allowing to custom stats of freighters, ships and multitools newly encountered.
@@ -16,7 +16,7 @@ No Man's Sky mod allowing to custom stats of freighters, ships and multitools ne
 - Download: https://github.com/MetaIdea/AMUMSS-nms-auto-modbuilder-updater-modscript-system
 - Guide: https://stepmodifications.org/wiki/NoMansSky:AMUMSS_Guide
 
-## CUSTOMISATION
+## CUSTOMIZATION
 - Edit the values in the LUA file and save it
 - Put it in AMUMSS/ModScript
 - Run BUILDMOD.bat
@@ -25,7 +25,7 @@ No Man's Sky mod allowing to custom stats of freighters, ships and multitools ne
 
 ## UPDATE
 - If I'm late updating the pak files after a game update
-- Follow the Customisation guide without editing the LUA script
+- Follow the Customization guide without editing the LUA script
 
 ## CONFLICTS
 - Will conflict with any mod editing METADATA\REALITY\TABLES\INVENTORYTABLE.MBIN
