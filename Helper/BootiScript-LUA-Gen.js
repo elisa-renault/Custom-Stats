@@ -15,11 +15,11 @@ function nms_gen_lua_from_xml(xml_txt)
 
 	let data = {};
 
-	let ShipBaseStatsData = doc.querySelectorAll(':root>[name=ShipBaseStatsData]>*');
-	for (let v of ShipBaseStatsData)
+	let WeaponBaseStatsData = doc.querySelectorAll(':root>[name=WeaponBaseStatsData]>*');
+	for (let v of WeaponBaseStatsData)
 	{
-		let data_ship = {};
-		let ship_name = v.getAttribute('name');
+		let data_weapon = {};
+		let weapon_name = v.getAttribute('name');
 
 		let BaseStatsPerClass = v.querySelectorAll('[name=BaseStatsPerClass]>*');
 		for (let v of BaseStatsPerClass)
@@ -46,10 +46,10 @@ function nms_gen_lua_from_xml(xml_txt)
 				data_class[stat_name] = data_stats;
 			}
 
-			data_ship[class_name] = data_class;
+			data_weapon[class_name] = data_class;
 		}
 
-		data[ship_name] = data_ship;
+		data[weapon_name] = data_weapon;
 	}
 
 	let out_defaults = '';
@@ -59,13 +59,9 @@ function nms_gen_lua_from_xml(xml_txt)
 
 	let beautify = (name) => {
 		const map = {
-			"FREI_DAMAGE": "Dmg",
-			"FREI_FLEET": "Fleet",
-			"FREI_HYPERDRIVE": "HD",
-			"SHIP_DAMAGE": "Dmg",
-			"SHIP_FLEET": "Fleet",
-			"SHIP_HYPERDRIVE": "HD",
-			"SHIP_SHIELD": "Shield",
+			"WEAPON_DAMAGE": "Dmg",
+			"WEAPON_MINING": "Mining",
+			"WEAPON_SCAN": "Scan",
 		};
 
 		if (!map.hasOwnProperty(name))
@@ -73,18 +69,18 @@ function nms_gen_lua_from_xml(xml_txt)
 		return map[name];
 	};
 
-	for (let ship_name in data)
+	for (let weapon_name in data)
 	{
-		let ship = data[ship_name];
+		let weapon = data[weapon_name];
 
 		out_array += `
   {
-  "${ship_name}",
+  "${weapon_name}",
     {`;
 
-		for (let class_name in ship)
+		for (let class_name in weapon)
 		{
-			let cls = ship[class_name];
+			let cls = weapon[class_name];
 
 			out_array += `
       {
@@ -106,7 +102,7 @@ function nms_gen_lua_from_xml(xml_txt)
 					if (name.match(/^(Min|Max)$/) === null)
 						continue;
 
-					let var_name = `${ship_name}${class_name}_${beautify(stat_name)}_${name}`;
+					let var_name = `${weapon_name}${class_name}_${beautify(stat_name)}_${name}`;
 
 					out_defaults += `${var_name} = "${value}" -- "${value}"\n`;
 					out_array += `${var_name}, `;
