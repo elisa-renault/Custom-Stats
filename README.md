@@ -1,10 +1,10 @@
-# Custom Stats - 0.1
+# Custom Stats - 0.1.2
 
 ## GENERAL
 No Man's Sky mod allowing to custom stats of freighters, ships and multitools newly encountered.
 
 ## REQUIREMENTS
-- No Man's Sky 3.98 ENDURANCE
+- No Man's Sky 4.65 ORBITAL
 
 ## VERSIONS
 - MAX: all the minimal values equal to their respective maximum. Meaning that all C fighter ships will have 10 damage as base stat and all S exotic ships will have 60 shield, for example. This is a buff, but respects the game limits.

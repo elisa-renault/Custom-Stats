@@ -1,5 +1,5 @@
-Custom Stats - 0.1
-==================
+Custom Stats - 0.1.2
+====================
 
 
 GENERAL
@@ -11,7 +11,7 @@ No Man's Sky mod allowing to custom stats of freighters, ships and multitools ne
 REQUIREMENTS
 ------------
 
--   No Man's Sky 3.98 ENDURANCE
+-   No Man's Sky 4.65 ORBITAL
 
 
 VERSIONS
